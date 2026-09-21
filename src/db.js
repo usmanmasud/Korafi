@@ -72,6 +72,9 @@ export async function initDb(url = config.databaseUrl) {
     const pool = new pg.Pool({ connectionString: url, max: 10 });
     impl = { query: async (t, p) => (await pool.query(t, p)).rows, close: () => pool.end(), kind: 'postgres' };
   } else {
+    if (config.isProd && !process.env.ALLOW_EMBEDDED_DB) {
+      throw new Error('DATABASE_URL is not set. In production Korafi needs a Postgres database (set DATABASE_URL, or ALLOW_EMBEDDED_DB=1 for a throwaway demo on a host with 1GB+ RAM).');
+    }
     const { PGlite } = await import('@electric-sql/pglite');
     const mem = process.env.KORAFI_DATA_DIR === 'memory';
     const dir = mem ? undefined : process.env.KORAFI_DATA_DIR || './data/pg';

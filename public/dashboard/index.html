@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Korafi Dashboard</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/dashboard/dashboard.css">
+</head>
+<body>
+
+<!-- Sign in -->
+<div class="login" id="login" hidden>
+  <form class="card login-card" id="loginForm">
+    <img src="/logo.svg" alt="" width="52" height="52">
+    <h1>Korafi</h1>
+    <p class="muted">Service Intelligence Dashboard</p>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" required autofocus>
+    <p class="err" id="loginErr" role="alert"></p>
+    <button class="btn primary" type="submit">Sign in</button>
+    <a class="muted small" href="/">← Back to korafi</a>
+  </form>
+</div>
+
+<!-- App -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="/"><img src="/logo.svg" alt="" width="30" height="30"><span>KORAFI</span></a>
+      <div class="biz" id="biz"></div>
+      <div class="top-r">
+        <span class="badge" id="modeBadge"></span>
+        <span class="live" id="live" title="Live updates"><i></i><span>Live</span></span>
+        <button class="btn ghost sm" id="logout">Sign out</button>
+      </div>
+    </div>
+    <nav class="wrap tabs" id="tabs" role="tablist">
+      <button role="tab" data-tab="overview" class="on">Overview</button>
+      <button role="tab" data-tab="incidents">Incidents</button>
+      <button role="tab" data-tab="reports">Reports</button>
+      <button role="tab" data-tab="messages">Messages &amp; rewards</button>
+      <button role="tab" data-tab="demo">Demo tools</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="alert" id="alert" hidden role="alert"></div>
+
+    <!-- OVERVIEW -->
+    <section data-view="overview">
+      <div class="kpis" id="kpis"></div>
+      <div class="cols">
+        <div class="card">
+          <div class="card-h"><h2>Active incidents</h2><span class="muted small" id="incHint"></span></div>
+          <div id="activeList"></div>
+        </div>
+        <div class="card map-card">
+          <div class="card-h"><h2>Report map</h2>
+            <span class="legend"><i class="r"></i>Incident <i class="a"></i>Watching <i class="g"></i>Clear</span></div>
+          <div id="map"></div>
+        </div>
+      </div>
+      <div class="cols three">
+        <div class="card"><div class="card-h"><h2>Reports · last 24 h</h2></div><div id="chartHourly"></div></div>
+        <div class="card"><div class="card-h"><h2>By problem</h2></div><div id="chartCat"></div></div>
+        <div class="card"><div class="card-h"><h2>By area</h2></div><div id="chartArea"></div></div>
+      </div>
+    </section>
+
+    <!-- INCIDENTS -->
+    <section data-view="incidents" hidden>
+      <div class="card">
+        <div class="card-h"><h2>All incidents</h2>
+          <div class="seg" id="incFilter"><button data-f="all" class="on">All</button><button data-f="active">Active</button><button data-f="resolved">Resolved</button></div></div>
+        <div id="allIncidents"></div>
+      </div>
+    </section>
+
+    <!-- REPORTS -->
+    <section data-view="reports" hidden>
+      <div class="card">
+        <div class="card-h"><h2>Latest reports</h2><a class="btn ghost sm" href="/api/export/reports.csv">Export CSV</a></div>
+        <div class="table-wrap"><table id="reportsTable"></table></div>
+      </div>
+    </section>
+
+    <!-- MESSAGES -->
+    <section data-view="messages" hidden>
+      <div class="cols">
+        <div class="card"><div class="card-h"><h2>SMS log</h2></div><div class="table-wrap"><table id="msgTable"></table></div></div>
+        <div class="card"><div class="card-h"><h2>Airtime rewards</h2></div><div class="table-wrap"><table id="rewardTable"></table></div></div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section data-view="demo" hidden>
+      <div class="cols">
+        <form class="card" id="simForm">
+          <div class="card-h"><h2>Simulate customer reports</h2></div>
+          <p class="muted">File reports without a phone to watch the incident engine react. Without a phone number, synthetic numbers are used and <b>no SMS or airtime is ever sent</b>.</p>
+          <div class="form-grid">
+            <label>Problem<select name="category" id="simCat"></select></label>
+            <label>Area<select name="area" id="simArea"></select></label>
+            <label>How many reports<input name="count" type="number" min="1" max="50" value="5"></label>
+            <label>Real phone (optional)<input name="phone" type="tel" placeholder="0803 000 0000"></label>
+          </div>
+          <button class="btn primary" type="submit">File reports</button>
+          <p class="muted small" id="simHint"></p>
+        </form>
+        <form class="card" id="incForm">
+          <div class="card-h"><h2>Open an incident manually</h2></div>
+          <p class="muted">Know about an outage before customers report it? Open the incident yourself and broadcast to anyone who has already reported.</p>
+          <div class="form-grid">
+            <label>Problem<select name="category" id="incCat"></select></label>
+            <label>Area<select name="area" id="incArea"></select></label>
+          </div>
+          <button class="btn dark" type="submit">Create incident</button>
+        </form>
+      </div>
+      <div class="card" id="howto">
+        <div class="card-h"><h2>Africa’s Talking callbacks</h2></div>
+        <p class="muted">Set these in your Africa’s Talking dashboard (append <code>?key=…</code> if <code>WEBHOOK_KEY</code> is set):</p>
+        <table class="kv" id="hooks"></table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Incident drawer -->
+<div class="overlay" id="overlay" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"></div>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="/dashboard/dashboard.js"></script>
+</body>
+</html>

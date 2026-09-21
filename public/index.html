@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Korafi — Report. Track. Reward. Resolve.</title>
+  <meta name="description" content="Korafi is a Hausa-first customer support and incident platform that works on any phone. USSD, SMS and Voice reporting, automatic incident detection and airtime rewards, powered by Africa's Talking.">
+  <meta name="theme-color" content="#06261f">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/landing.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="34" height="34">Korafi</a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false" id="menuBtn">☰</button>
+    <nav id="menu" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#engine">Incident engine</a>
+      <a href="#channels">Channels</a>
+      <a href="#market">Marketplace</a>
+      <a href="#pricing">Pricing</a>
+      <a class="btn btn-primary" href="/dashboard/">Open dashboard</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="pill"><i></i> Hausa-first · No internet · Powered by Africa’s Talking</div>
+      <h1><span>Report.</span><span>Track.</span><span>Reward.</span><span class="a">Resolve.</span></h1>
+      <p class="sub"><b>Customer support that works on any phone.</b> No smartphone. No app. No data. No English required.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="/dashboard/">See the live dashboard →</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+      <div class="trust">
+        <span>USSD</span><span>SMS</span><span>Voice</span><span>Airtime rewards</span>
+      </div>
+    </div>
+
+    <div class="stage" aria-hidden="true">
+      <div class="phone">
+        <div class="screen">
+          <div class="dial" id="dial"></div>
+          <div class="ussd" id="ussd"></div>
+          <div class="reply"><span>Reply</span><b>Send</b></div>
+          <div class="sms" id="sms"><small>SMS · KORAFI</small>KORAFI: An karɓi rahotonka.<br>Ticket: #KF2048<br>Za mu sanar da kai idan akwai sabon bayani.</div>
+        </div>
+      </div>
+      <div class="float f1"><span class="dot"></span><b>Possible incident</b>Kabuga · Network<br>17 reports · Confidence HIGH</div>
+      <div class="float f2"><b>₦50 airtime</b>Sent after the customer confirmed the fix.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">The real problem</span>
+      <h2 style="margin-top:14px">People can talk to businesses. Businesses can’t <em style="font-style:normal;color:var(--green)">hear them at scale.</em></h2>
+      <blockquote>“There is no network in my area.”</blockquote>
+      <p class="lead" style="margin-top:22px">A customer can say it in seconds. But the business never learns the things that matter — until Korafi turns that sentence into structured data.</p>
+    </div>
+    <div class="unknowns">
+      <div><p><strong>Where is the problem?</strong><span>Which unguwa, which street.</span></p></div>
+      <div><p><strong>How many people are affected?</strong><span>One customer, or two thousand?</span></p></div>
+      <div><p><strong>When did it start?</strong><span>The first report is the real start time.</span></p></div>
+      <div><p><strong>Is anyone fixing it?</strong><span>Customers get a ticket and honest updates.</span></p></div>
+      <div><p><strong>Is it actually fixed?</strong><span>Customers confirm — and earn airtime for it.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">How it works</span>
+      <h2>From a basic phone to a resolved incident in four steps</h2>
+      <p class="lead">Customers dial a short code. Everything else — tickets, clustering, updates and rewards — happens automatically.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="n">01 · REPORT</div>
+        <h3>Dial. Pick. Done.</h3>
+        <p>Two taps: what’s wrong, and where. The complaint is already structured data.</p>
+        <div class="ex">1. Babu wuta
+2. Babu ruwa
+3. Matsalar network
+4. Delivery problem
+5. Sauran matsala</div>
+      </article>
+      <article class="step">
+        <div class="n">02 · TRACK</div>
+        <h3>A ticket, instantly</h3>
+        <p>An SMS ticket lands in seconds. For the first time, the customer has something to hold on to.</p>
+        <div class="ex">KORAFI: An karɓi rahotonka.
+Ticket: #KF2048</div>
+      </article>
+      <article class="step">
+        <div class="n">03 · UPDATE</div>
+        <h3>One incident, many customers</h3>
+        <p>The business sends one broadcast. Every affected customer is told in their own language.</p>
+        <div class="ex">Ana fama da matsalar network a Kabuga. Ana aiki a kai.</div>
+      </article>
+      <article class="step">
+        <div class="n">04 · REWARD</div>
+        <h3>Confirm the fix, earn airtime</h3>
+        <p>Customers verify the repair with one key press. The business gets a real resolution signal.</p>
+        <div class="ex">An gyara matsalar?
+1. Eh   2. A’a
+→ ₦50 airtime</div>
+      </article>
+    </div>
+    <p class="tagline">Report → Ticket → Updates → Confirm → <i>Reward.</i></p>
+  </div>
+</section>
+
+<!-- ENGINE -->
+<section class="engine" id="engine">
+  <div class="wrap cols">
+    <div>
+      <span class="eyebrow">The Incident Engine</span>
+      <h2 style="margin:14px 0 18px">Korafi doesn’t wait for someone to notice 50 complaints.</h2>
+      <p class="lead">It watches every report as it arrives. When several customers report the same problem in the same place within minutes, it opens a possible incident — with a confidence score — before your support team has read a single message.</p>
+      <div class="rule">
+        <span>same <b>problem</b></span><span>+</span><span>same <b>area</b></span><span>+</span><span>short <b>time window</b></span><span>→ 🚨 incident</span>
+      </div>
+    </div>
+    <div class="funnel">
+      <div class="tick-row" id="ticks" aria-label="Many individual complaints"></div>
+      <div class="arrow">▼ &nbsp;KORAFI DETECTS THE PATTERN&nbsp; ▼</div>
+      <div class="inc-card">
+        <div class="tag"><i></i> POSSIBLE NETWORK OUTAGE</div>
+        <h3>Kabuga — Network</h3>
+        <dl>
+          <div><dt>Reports</dt><dd>17</dd></div>
+          <div><dt>Started</dt><dd>08:41</dd></div>
+          <div><dt>Confidence</dt><dd>HIGH</dd></div>
+        </dl>
+        <div class="b"><span>Send SMS update</span><span class="o">Create broadcast</span><span class="o">Mark resolved</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section id="channels">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Built on Africa’s Talking</span>
+      <h2>One platform. Every kind of phone.</h2>
+      <p class="lead">Smartphone users, feature-phone users and people who prefer to speak Hausa aloud all reach the same incident engine.</p>
+    </div>
+    <div class="channels">
+      <div class="ch"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>USSD</h3><p>Dial a short code and report in under 20 seconds. Works on any handset, with zero data.</p><small>Complaint reporting</small></div>
+      <div class="ch"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg></div><h3>SMS</h3><p>Ticket confirmations, incident broadcasts, status lookups and “was it fixed?” replies.</p><small>Updates &amp; broadcasts</small></div>
+      <div class="ch"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><h3>Voice</h3><p>“Barka da zuwa Korafi.” A Hausa-first phone menu, plus voice notes for people who’d rather speak.</p><small>Accessible reporting</small></div>
+      <div class="ch"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1 1-1.5 2.5-1.5s2.5.6 2.5 1.6c0 2.2-5 1.2-5 3.6 0 1 1 1.6 2.5 1.6s2.5-.6 2.5-1.5"/></svg></div><h3>Airtime</h3><p>Reward customers who confirm a fix. Capped per customer per day to prevent abuse.</p><small>Growth loop</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="preview">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Service intelligence dashboard</span>
+      <h2>See incidents form in real time</h2>
+      <p class="lead">Live reports, a heat map of affected areas, one-click broadcasts and full resolution tracking.</p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><span>KORAFI · Service Intelligence</span><small>● Live</small></div>
+      <div class="kpis">
+        <div><b>248</b><span>Reports</span></div>
+        <div><b>17</b><span>Incidents</span></div>
+        <div><b>92%</b><span>Resolved</span></div>
+        <div><b>6</b><span>Areas affected</span></div>
+      </div>
+      <div class="grid">
+        <div class="list">
+          <div class="row"><span><i style="background:var(--red)"></i>Kabuga — Network outage</span><em>47 reports</em></div>
+          <div class="row"><span><i style="background:var(--amber)"></i>Hotoro — Water interruption</span><em>21 reports</em></div>
+          <div class="row"><span><i style="background:var(--green-2)"></i>Tarauni — Delivery issue</span><em>8 reports</em></div>
+        </div>
+        <div class="map">
+          <span class="pin" style="left:30%;top:60%;width:34px;height:34px;background:var(--red)"></span>
+          <span class="pin" style="left:62%;top:34%;width:24px;height:24px;background:var(--amber)"></span>
+          <span class="pin" style="left:72%;top:70%;width:16px;height:16px;background:var(--green-2)"></span>
+        </div>
+      </div>
+    </div>
+    <div class="center"><a class="btn btn-dark" href="/dashboard/">Open the dashboard →</a></div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Not built for one company</span>
+      <h2>Any organisation that serves people can run Korafi</h2>
+    </div>
+    <div class="uses">
+      <div class="use"><h3>Telecoms</h3><p>Network outage reporting by area.</p></div>
+      <div class="use"><h3>Electricity providers</h3><p>Power outages, faults and fallen lines.</p></div>
+      <div class="use"><h3>Water providers</h3><p>Interruptions, bursts and low pressure.</p></div>
+      <div class="use"><h3>Logistics</h3><p>Failed and delayed deliveries.</p></div>
+      <div class="use"><h3>Schools</h3><p>Parent and student complaints.</p></div>
+      <div class="use"><h3>Estates</h3><p>Security, water, power and maintenance.</p></div>
+      <div class="use"><h3>Hospitals</h3><p>Service feedback and facility issues.</p></div>
+      <div class="use"><h3>Communities &amp; government</h3><p>Citizen issue reporting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETPLACE -->
+<section class="market" id="market">
+  <div class="wrap cols">
+    <div>
+      <span class="eyebrow">Reusable · Containerised · Configurable</span>
+      <h2 style="margin:14px 0 18px">Deploy your own Korafi instance in minutes</h2>
+      <p class="lead">Each customer gets an independent instance with its own brand, USSD code, areas, reward and database. Nothing is hard-coded to Kano — Kano is simply our first market.</p>
+      <ul class="checks">
+        <li>Docker image with Postgres via <b>docker compose</b></li>
+        <li>Configured entirely through environment variables</li>
+        <li>Hausa and English out of the box</li>
+        <li>Africa’s Talking sandbox mode for safe testing</li>
+      </ul>
+    </div>
+<pre class="code"><span class="c"># one instance per customer</span>
+<span class="k">BUSINESS_NAME</span>=Kano Water Board
+<span class="k">USSD_CODE</span>=*384*1234#
+<span class="k">SMS_SENDER_ID</span>=KORAFI
+<span class="k">DEFAULT_LANGUAGE</span>=ha
+<span class="k">DEFAULT_REWARD</span>=50
+<span class="k">SUPPORTED_AREAS</span>=Kabuga,Hotoro,Tarauni,Sabon Gari
+<span class="k">AT_USERNAME</span>=your-app
+<span class="k">AT_API_KEY</span>=••••••••
+<span class="k">DATABASE_URL</span>=postgres://…
+
+$ docker compose up -d
+<span class="c"># → dashboard + USSD / SMS / Voice webhooks live</span></pre>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Pricing</span>
+      <h2>Start free. Grow when your reports do.</h2>
+    </div>
+    <div class="plans">
+      <div class="plan"><h3>Community</h3><div class="price">Free</div><div class="cap">100 reports / month</div>
+        <ul><li>USSD reporting</li><li>SMS notifications</li><li>Basic dashboard</li></ul>
+        <a class="btn btn-outline" href="#market">Get started</a></div>
+      <div class="plan"><h3>Starter</h3><div class="price">₦5,000<small>/mo</small></div><div class="cap">500 reports / month</div>
+        <ul><li>USSD + SMS</li><li>Incident detection</li><li>Dashboard &amp; CSV export</li></ul>
+        <a class="btn btn-outline" href="#market">Deploy</a></div>
+      <div class="plan pop"><span class="flag">MOST POPULAR</span><h3>Business</h3><div class="price">₦15,000<small>/mo</small></div><div class="cap">2,500 reports / month</div>
+        <ul><li>USSD, SMS &amp; Voice</li><li>Airtime rewards</li><li>Incident detection &amp; broadcasts</li><li>Analytics</li></ul>
+        <a class="btn btn-primary" href="#market">Deploy</a></div>
+      <div class="plan"><h3>Enterprise</h3><div class="price">Custom</div><div class="cap">Telecoms, utilities, institutions</div>
+        <ul><li>Unlimited reports</li><li>Dedicated instance &amp; SLA</li><li>Custom integrations</li></ul>
+        <a class="btn btn-outline" href="mailto:hello@korafi.app">Talk to us</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Report. Track. Reward. <span>Resolve.</span></h2>
+    <p>Korafi turns the ordinary phone into a direct line between customers, businesses and the problems they need to solve.</p>
+    <a class="btn btn-primary" href="/dashboard/">Open the dashboard →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Korafi · Customer Support &amp; Incident Platform · Built with Africa’s Talking</span>
+    <span><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="/dashboard/">Dashboard</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // mobile menu
+  const btn = document.getElementById('menuBtn'), menu = document.getElementById('menu');
+  btn.addEventListener('click', () => { const o = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', o); });
+  menu.addEventListener('click', (e) => { if (e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+
+  // complaint grid
+  const ticks = document.getElementById('ticks');
+  for (let i = 0; i < 48; i++) ticks.appendChild(document.createElement('i'));
+
+  // USSD demo loop
+  const dial = document.getElementById('dial'), ussd = document.getElementById('ussd'), sms = document.getElementById('sms');
+  const frames = [
+    { d: '*384*1234#', t: 'KORAFI - Kano Water\n1. Bayar da rahoton matsala\n2. Duba rahotona\n3. Tabbatar da gyara\n4. Taimako\n5. English' },
+    { d: '1', t: 'Zaɓi matsala:\n1. Babu wuta\n2. Babu ruwa\n3. Matsalar network\n4. Delivery problem\n5. Sauran matsala' },
+    { d: '3', t: 'Zaɓi unguwa:\n1. Kabuga\n2. Hotoro\n3. Tarauni\n4. Sabon Gari\n5. Sauran' },
+    { d: '1', t: 'An karɓi rahotonka.\nTicket: #KF2048\nZa mu aiko maka SMS idan akwai sabon bayani.', sms: true },
+  ];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0;
+  function show() {
+    const f = frames[i];
+    dial.textContent = f.d;
+    ussd.innerHTML = '';
+    ussd.append(document.createTextNode(f.t + ' '));
+    const c = document.createElement('span'); c.className = 'cursor'; ussd.append(c);
+    sms.classList.toggle('show', !!f.sms);
+    i = (i + 1) % frames.length;
+    if (!reduce) setTimeout(show, f.sms ? 4200 : 2200);
+  }
+  show();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "korafi",
+  "version": "1.0.0",
+  "description": "Korafi — Hausa-first customer support and service incident platform for any phone, powered by Africa's Talking.",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "dotenv": "^18.0.2",
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  }
+}

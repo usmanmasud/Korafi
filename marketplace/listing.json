@@ -1,0 +1,15 @@
+{
+  "name": "Korafi — Customer Support & Incident Platform",
+  "tagline": "Report. Track. Reward. Resolve. Customer support that works on any phone.",
+  "category": "Customer Support",
+  "logo": "public/logo.svg",
+  "container": "Dockerfile",
+  "configuration": ["BUSINESS_NAME","USSD_CODE","SMS_SENDER_ID","DEFAULT_REWARD","SUPPORTED_AREAS","DEFAULT_LANGUAGE","AT_USERNAME","AT_API_KEY","DATABASE_URL"],
+  "africastalking_products": ["USSD","SMS","Voice","Airtime"],
+  "plans": [
+    { "name": "Community", "price": 0, "currency": "NGN", "period": "month", "reports": 100, "features": ["USSD","SMS notifications","Basic dashboard"] },
+    { "name": "Starter", "price": 5000, "currency": "NGN", "period": "month", "reports": 500, "features": ["USSD","SMS","Incident detection","Dashboard"] },
+    { "name": "Business", "price": 15000, "currency": "NGN", "period": "month", "reports": 2500, "features": ["USSD","SMS","Voice","Airtime rewards","Incident detection","Broadcasts","Analytics"] },
+    { "name": "Enterprise", "price": null, "features": ["Custom"] }
+  ]
+}

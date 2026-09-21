@@ -1,0 +1,20 @@
+services:
+  korafi:
+    build: .
+    image: korafi:latest
+    ports: ["${PORT:-3000}:3000"]
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://korafi:korafi@db:5432/korafi
+      PORT: 3000
+    depends_on:
+      db: { condition: service_healthy }
+    restart: unless-stopped
+  db:
+    image: postgres:16-alpine
+    environment: { POSTGRES_USER: korafi, POSTGRES_PASSWORD: korafi, POSTGRES_DB: korafi }
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U korafi"], interval: 5s, timeout: 5s, retries: 10 }
+    restart: unless-stopped
+volumes:
+  pgdata:

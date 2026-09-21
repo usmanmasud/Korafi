@@ -75,6 +75,7 @@ export async function initDb(url = config.databaseUrl) {
     const { PGlite } = await import('@electric-sql/pglite');
     const mem = process.env.KORAFI_DATA_DIR === 'memory';
     const dir = mem ? undefined : process.env.KORAFI_DATA_DIR || './data/pg';
+    if (dir) (await import('node:fs')).mkdirSync(dir, { recursive: true });
     const db = new PGlite(dir);
     await db.waitReady;
     impl = { query: async (t, p) => (await db.query(t, p)).rows, close: () => db.close(), kind: mem ? 'memory' : 'embedded' };

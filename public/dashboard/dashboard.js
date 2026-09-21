@@ -74,6 +74,14 @@
       $('#loginErr').textContent = err.message;
     }
   });
+  $('#pwToggle').addEventListener('click', (e) => {
+    const show = $('#pw').type === 'password';
+    $('#pw').type = show ? 'text' : 'password';
+    e.currentTarget.textContent = show ? 'Hide' : 'Show';
+    e.currentTarget.setAttribute('aria-pressed', show);
+    e.currentTarget.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    $('#pw').focus();
+  });
   $('#logout').addEventListener('click', async () => {
     await api('/auth/logout', {}).catch(() => {});
     showLogin();

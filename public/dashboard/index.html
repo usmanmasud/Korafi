@@ -22,7 +22,7 @@
     <h1>Korafi</h1>
     <p class="muted">Service Intelligence Dashboard</p>
     <label for="pw">Password</label>
-    <input id="pw" type="password" autocomplete="current-password" required autofocus>
+    <div class="pw-wrap"><input id="pw" type="password" autocomplete="current-password" required autofocus><button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password" aria-pressed="false">Show</button></div>
     <p class="err" id="loginErr" role="alert"></p>
     <button class="btn primary" type="submit">Sign in</button>
     <a class="muted small" href="/">← Back to korafi</a>

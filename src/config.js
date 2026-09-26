@@ -29,7 +29,7 @@ if (!categories.includes('other')) categories.push('other');
 
 export const config = {
   businessName: env.BUSINESS_NAME || 'Korafi',
-  ussdCode: env.USSD_CODE || '*384*1234#',
+  ussdCode: env.USSD_CODE || '*384*39563#',
   senderId: env.SMS_SENDER_ID || '',
   language: env.DEFAULT_LANGUAGE === 'en' ? 'en' : 'ha',
   reward: num(env.DEFAULT_REWARD, 50),

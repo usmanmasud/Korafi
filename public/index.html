@@ -240,7 +240,7 @@ Ticket: #KF2048</div>
     </div>
 <pre class="code"><span class="c"># one instance per customer</span>
 <span class="k">BUSINESS_NAME</span>=Kano Water Board
-<span class="k">USSD_CODE</span>=*384*1234#
+<span class="k">USSD_CODE</span>=*384*39563#
 <span class="k">SMS_SENDER_ID</span>=KORAFI
 <span class="k">DEFAULT_LANGUAGE</span>=ha
 <span class="k">DEFAULT_REWARD</span>=50
@@ -310,7 +310,7 @@ $ docker compose up -d
   // USSD demo loop
   const dial = document.getElementById('dial'), ussd = document.getElementById('ussd'), sms = document.getElementById('sms');
   const frames = [
-    { d: '*384*1234#', t: 'KORAFI - Kano Water\n1. Bayar da rahoton matsala\n2. Duba rahotona\n3. Tabbatar da gyara\n4. Taimako\n5. English' },
+    { d: '*384*39563#', t: 'KORAFI - Kano Water\n1. Bayar da rahoton matsala\n2. Duba rahotona\n3. Tabbatar da gyara\n4. Taimako\n5. English' },
     { d: '1', t: 'Zaɓi matsala:\n1. Babu wuta\n2. Babu ruwa\n3. Matsalar network\n4. Delivery problem\n5. Sauran matsala' },
     { d: '3', t: 'Zaɓi unguwa:\n1. Kabuga\n2. Hotoro\n3. Tarauni\n4. Sabon Gari\n5. Sauran' },
     { d: '1', t: 'An karɓi rahotonka.\nTicket: #KF2048\nZa mu aiko maka SMS idan akwai sabon bayani.', sms: true },
